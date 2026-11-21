@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>C 结构速查 · C QuickRef</title>
+  <meta name="description" content="按分类快速查找 C 语言基础结构：语法模板、可编译示例与易错点。">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/exercises.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到内容</a>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button type="button" class="sidebar-toggle" id="sidebar-toggle"
+              aria-label="收起分类目录" aria-expanded="true"
+              title="收起分类目录 (Ctrl+B)">
+        <span class="hamburger" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+      <a class="brand" href="#" id="brand-home">
+        <span class="brand-mark">C</span>
+        <span class="brand-text">结构速查</span>
+      </a>
+      <button type="button" class="search-trigger" id="search-trigger">
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <span class="search-trigger-text">搜索结构、语法、关键字…</span>
+        <kbd>Ctrl</kbd><kbd>K</kbd>
+      </button>
+      <button type="button" class="width-toggle" id="width-toggle"
+              aria-label="切换页面宽度" aria-pressed="true"
+              title="切换满屏 / 居中 (Ctrl+Shift+W)">⤢ 居中</button>
+      <a class="width-toggle" href="quiz.html" title="转专业笔试练习（试行）">练习题 ↗</a>
+      <button type="button" class="width-toggle" id="sound-toggle"
+              aria-label="切换答题音效" aria-pressed="true"
+              title="答题音效开关">🔊 音效</button>
+      <span class="topbar-note" id="entry-count"></span>
+    </div>
+  </header>
+
+  <div class="layout" id="layout">
+    <aside class="sidebar" id="sidebar" aria-label="分类导航">
+      <div class="sidebar-head">
+        <span>分类目录</span>
+        <span class="sidebar-hint">悬停预览 · 点击固定</span>
+      </div>
+      <nav id="category-nav"></nav>
+      <div class="sidebar-foot">
+        <a href="#" id="show-all">显示全部</a>
+        <span class="dot">·</span>
+        <a href="#about" id="about-link">关于本站</a>
+      </div>
+    </aside>
+
+    <main class="content" id="main">
+      <div id="view-browse">
+        <div class="page-head">
+          <div class="page-title-row">
+            <h1 id="view-title">全部结构</h1>
+            <span class="preview-badge" id="preview-badge" hidden>悬停预览 · 点击可固定</span>
+          </div>
+          <p class="page-desc" id="view-desc">按分类浏览，或直接搜索。</p>
+        </div>
+        <div class="card-grid" id="card-grid"></div>
+        <p class="empty-state" id="empty-state" hidden>这个分类暂时还没有条目。</p>
+      </div>
+
+      <article class="detail" id="view-detail" hidden>
+        <a class="back-link" href="#" id="back-link">← 返回列表</a>
+        <div class="detail-head">
+          <span class="tag" id="detail-category"></span>
+          <h1 id="detail-name"></h1>
+          <p class="detail-summary" id="detail-summary"></p>
+        </div>
+
+        <section class="detail-section">
+          <h2>语法模板</h2>
+          <pre class="code-block"><code id="detail-syntax"></code></pre>
+        </section>
+
+        <section class="detail-section">
+          <h2>示例代码 <span class="level-chip" id="detail-level"></span><button type="button" class="copy-btn" id="copy-btn">复制代码</button></h2>
+          <pre class="code-block"><code id="detail-code"></code></pre>
+        </section>
+
+        <section class="detail-section" id="detail-walkthrough-section" hidden>
+          <h2>难句逐句解读</h2>
+          <ol class="walkthrough" id="detail-walkthrough"></ol>
+        </section>
+
+        <section class="detail-section" id="detail-extra-section" hidden>
+          <h2>补充说明</h2>
+          <ul class="extras" id="detail-extra"></ul>
+        </section>
+
+        <section class="detail-section" id="detail-refs-section" hidden>
+          <h2>参考来源</h2>
+          <ul class="refs" id="detail-refs"></ul>
+        </section>
+
+        <section class="detail-section">
+          <h2>要点与易错点</h2>
+          <ul class="pitfalls" id="detail-pitfalls"></ul>
+        </section>
+
+        <section class="detail-section" id="detail-related-section" hidden>
+          <h2>相关条目</h2>
+          <div class="related-list" id="detail-related"></div>
+        </section>
+
+        <section class="detail-section" id="detail-exercise-section" hidden>
+          <h2>配套练习</h2>
+          <p class="exercise-hint">按入门 / 掌握 / 精通三档，点选项立即判分。</p>
+          <div class="exercise-list" id="detail-exercise"></div>
+        </section>
+      </article>
+
+      <article class="about" id="view-about" hidden>
+        <a class="back-link" href="#" id="about-back">← 返回列表</a>
+        <h1>关于本站</h1>
+        <p>本站是一个<strong>离线可用</strong>的 C 语言基础结构速查表：按分类浏览，或用搜索框命中条目名与中英别名。</p>
+        <p>每个条目固定包含：一句话说明、语法模板、带注释的可编译示例、难句逐句解读、补充说明、要点与易错点、参考来源、相关条目。</p>
+        <ul>
+          <li>全站无后端、无网络请求，双击 <code>index.html</code> 即可使用。</li>
+          <li>内容集中在 <code>data/structures.js</code>；新增条目只改这一个文件。</li>
+          <li>快捷键：<kbd>Ctrl</kbd> / <kbd>⌘</kbd> + <kbd>K</kbd> 搜索，<kbd>Ctrl</kbd> / <kbd>⌘</kbd> + <kbd>B</kbd> 收起或唤出分类目录，<kbd>Esc</kbd> 关闭。</li>
+        </ul>
+        <p class="muted" id="about-version"></p>
+      </article>
+    </main>
+  </div>
+
+  <!-- 窄屏时左栏以抽屉滑出，遮罩只在窄屏显示 -->
+  <div class="drawer-scrim" id="drawer-scrim" hidden></div>
+
+  <div class="overlay" id="search-overlay" hidden>
+    <div class="search-panel" role="dialog" aria-modal="true" aria-label="搜索 C 结构">
+      <div class="search-input-row">
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input type="search" id="search-input" placeholder="试试：循环、pointer、sizeof、优先级…" autocomplete="off" spellcheck="false">
+        <kbd class="esc-key">Esc</kbd>
+      </div>
+      <div class="search-results" id="search-results"></div>
+      <div class="search-foot">
+        <span><kbd>↑</kbd><kbd>↓</kbd> 移动</span>
+        <span><kbd>Enter</kbd> 打开</span>
+        <span class="search-context" id="search-context"></span>
+        <span id="search-stat"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" hidden>已复制</div>
+
+  <script src="data/structures.js"></script>
+  <script src="data/exercises.js"></script>
+  <script src="assets/sfx.js"></script>
+  <script src="assets/sound-toggle.js"></script>
+  <script src="assets/exercises.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

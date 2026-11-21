@@ -1,0 +1,74 @@
+/* =========================================================================
+ * 条目配套练习样式（追加到 style.css 末尾，可整块删除回退）
+ * ========================================================================= */
+/* >>> 配套练习开始 <<< */
+.exercise-hint { margin: -2px 0 14px; color: var(--text-muted); font-size: 12.5px; }
+
+.ex-list { list-style: none; margin: 0; padding: 0; }
+.ex-item {
+  padding: 16px 0; border-top: 1px solid var(--border);
+}
+.ex-item:first-child { border-top: 0; padding-top: 4px; }
+
+.ex-head { display: flex; align-items: center; gap: 9px; margin-bottom: 9px; }
+.ex-tier {
+  padding: 1px 8px; border-radius: 20px; font-size: 11px; font-weight: 600;
+  border: 1px solid transparent;
+}
+/* 三档配色：入门偏绿、掌握偏蓝、精通偏紫，一眼区分难度 */
+.tier-basic  { background: #eaf6ec; color: #2f7a3f; border-color: #cfe8d5; }
+.tier-master { background: #e9f0fb; color: #2c5aa0; border-color: #d3e2f5; }
+.tier-expert { background: #f2ebfa; color: #6b3fa0; border-color: #e0d3f0; }
+.ex-no { color: var(--text-muted); font-size: 11.5px; font-family: var(--mono); }
+
+.ex-code {
+  margin: 0 0 10px; padding: 11px 13px; overflow-x: auto;
+  background: var(--bg-soft); border: 1px solid var(--border); border-radius: var(--radius);
+  font-family: var(--mono); font-size: 12.5px; line-height: 1.6;
+}
+.ex-stem { margin: 0 0 10px; font-size: 14px; line-height: 1.75; }
+
+.ex-options { display: flex; flex-direction: column; gap: 6px; }
+.ex-option {
+  text-align: left; padding: 8px 12px; width: 100%;
+  background: #fff; border: 1px solid var(--border); border-radius: 6px;
+  color: var(--text); font-family: inherit; font-size: 13.5px; line-height: 1.6;
+  cursor: pointer; transition: border-color .12s, background .12s;
+}
+.ex-option:hover:not(:disabled) { border-color: var(--accent); background: var(--accent-soft); }
+.ex-option:disabled { cursor: default; }
+.ex-option.locked { opacity: .75; }
+.ex-option.picked { border-color: var(--accent); }
+
+.ex-blank { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.ex-input {
+  flex: 1; min-width: 140px; max-width: 260px; padding: 7px 10px;
+  border: 1px solid var(--border-strong); border-radius: 6px;
+  font-family: var(--mono); font-size: 13px;
+}
+.ex-check {
+  padding: 7px 14px; border: 1px solid var(--border-strong); border-radius: 6px;
+  background: #fff; color: var(--text); font-family: inherit; font-size: 13px; cursor: pointer;
+}
+.ex-check:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.ex-check:disabled { opacity: .6; cursor: default; }
+
+.ex-feedback {
+  margin-top: 10px; padding: 10px 12px;
+  background: var(--bg-soft); border: 1px solid var(--border); border-radius: var(--radius);
+  font-size: 13px; line-height: 1.75;
+}
+.ex-verdict { font-weight: 600; }
+.ex-verdict.ok { color: #2f7a3f; }
+.ex-verdict.no { color: #b4451f; }
+.ex-explain { margin-top: 5px; color: var(--text-soft); }
+
+.ex-item.right { border-left: 3px solid #4a9c5f; padding-left: 13px; }
+.ex-item.wrong { border-left: 3px solid #d0684a; padding-left: 13px; }
+
+.ex-summary {
+  margin: 14px 0 0; padding: 10px 13px;
+  background: var(--accent-soft); border-radius: var(--radius);
+  color: var(--accent); font-size: 13px; font-weight: 600;
+}
+/* >>> 配套练习结束 <<< */

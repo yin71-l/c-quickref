@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>转专业笔试练习 · C 结构速查</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/quiz.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到内容</a>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button type="button" class="sidebar-toggle" id="sidebar-toggle"
+              aria-label="收起分类目录" aria-expanded="true"
+              title="收起分类目录 (Ctrl+B)">
+        <span class="hamburger" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+      <a class="brand" href="index.html">
+        <span class="brand-mark">C</span>
+        <span class="brand-text">结构速查</span>
+      </a>
+      <span class="brand-sub">/ 转专业笔试练习</span>
+      <span class="topbar-note" id="entry-count"></span>
+      <a class="width-toggle" href="index.html" title="返回速查页">← 返回速查</a>
+    </div>
+  </header>
+
+  <div class="layout" id="layout">
+    <aside class="sidebar" id="sidebar" aria-label="分类导航">
+      <div class="sidebar-head">
+        <span>分类目录</span>
+        <span class="sidebar-hint">点击切换练习范围</span>
+      </div>
+      <nav id="quiz-filters"></nav>
+      <div class="sidebar-foot">
+        <span id="quiz-picked"></span>
+      </div>
+    </aside>
+
+    <main class="content" id="main">
+      <div class="quiz-disclaimer" role="note">
+        <strong>⚠ 题目按用户提供的真试题截图整理改写（核心考点一致），非官方公开发布。</strong>
+        截图来自 Pintia「2026.03.31：转专业《C语言程序设计》考试」，经本机离线 OCR 提取后人工整理、gcc 实编核验答案；编程题截图只有标题，未编造题面。
+        <div class="quiz-official" id="quiz-official"></div>
+      </div>
+
+      <section class="quiz-panel" id="quiz-setup">
+        <h1>转专业笔试练习（试行）</h1>
+        <p class="quiz-meta" id="quiz-meta"></p>
+        <div class="quiz-actions">
+          <button type="button" class="btn primary" id="quiz-start">开始练习</button>
+        </div>
+      </section>
+
+      <section class="quiz-panel" id="quiz-run" hidden>
+        <div class="quiz-progress">
+          <span id="quiz-progress-text"></span>
+          <div class="quiz-progress-bar"><i id="quiz-progress-fill"></i></div>
+        </div>
+        <ol class="quiz-list" id="quiz-list"></ol>
+        <div class="quiz-actions">
+          <button type="button" class="btn primary" id="quiz-submit">交卷并查看解析</button>
+          <button type="button" class="btn" id="quiz-reset">重新选题</button>
+        </div>
+      </section>
+
+      <section class="quiz-panel" id="quiz-result" hidden>
+        <h1>本次结果</h1>
+        <div class="quiz-score" id="quiz-score"></div>
+        <p class="quiz-meta" id="quiz-result-note"></p>
+        <div class="quiz-actions">
+          <button type="button" class="btn primary" id="quiz-review">查看逐题解析</button>
+          <button type="button" class="btn" id="quiz-again">再练一次</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="data/structures.js"></script>
+  <script src="data/quiz-bank.js"></script>
+  <script src="assets/quiz.js"></script>
+</body>
+</html>
